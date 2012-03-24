@@ -1,74 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>EventeX</title>
-	<link href='http://fonts.googleapis.com/css?family=Patua+One' rel='stylesheet' type='text/css'>
-</head>
-<style type="text/css">
-body {
-	background-color: #eee;
-	font-family: Helvetica, Tahoma, sans-serif;
-}
-header {
-	text-align: center;
-	border-bottom: 1px solid #eee;
-	padding-bottom: 30px;
-}
-footer {
-	clear: both;
-	text-align: center;
-	margin-top: 20px;
-	border-top: 1px solid #eee;
-}
-a {
-	color: #f63;
-	text-decoration: none;
-}
-a:hover {
-	text-decoration: underline;
-}
-#wrapper {
-	width: 960px;
-	padding: 20px;
-	background-color: #fff;
-	margin: 40px auto;
-	box-shadow: 0 0 5px #999;
-}
-.logo {
-	font-family: 'Patua One', cursive;
-	font-size: 400%;
-	color: #f63;
-	text-shadow: 1px 1px 0px #666;
-	margin: 0;
-	padding: 0;
-}
-.slogan {
-	font-size: 120%;
-	margin: 0;
-	padding: 0;
-}
-#body p {
-	text-align: center;
-}
-</style>
-<body>
-<section id="wrapper">
-	<header>
-		<h1 class="logo">EventeX</h1>
-		<h2 class="slogan">Bem-vindo ao EventeX!</h2>
-	</header>
-	<section id="body">
+{% extends 'base.html' %}
+{% block content %}
 		<p>O evento mais sensacional do ano depois do Dev in Rio!</p>
 		<p>Você não pode perder esta oportunidade!</p>
-		<p><strong>Abertura das inscrições em 18/03/2012.</strong></p>
+		<p><strong>
+			<a href="{% url subscriptions:subscribe %}">Inscreva-se já!</a>
+		</strong></p>
 		<p>Para dúvida e mais informações, entre em contato com <a href="mailto:eventex@eventex.com.br">eventex@eventex.com.br</a></p>
-	</section>
-	<footer>
-		<p>&copy; 2012 <a href="/">EventeX</a>. Todos os direitos reservados. Orgulhosamente feito com <a href="https://www.djangoproject.com/" alt="Django Project" title="Django Project">Django</a>.</p>
-		<a href="http://www.w3.org/html/logo/">
-		<img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics">
-		</a>
-	</footer>
-</section>
-</body>
-</html>
+{% endblock content %}
