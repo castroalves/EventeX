@@ -1,9 +1,20 @@
 {% extends 'base.html' %}
+{% load mytags %}
 {% block content %}
-		<p>O evento mais sensacional do ano depois do Dev in Rio!</p>
-		<p>Você não pode perder esta oportunidade!</p>
-		<p><strong>
-			<a href="{% url subscriptions:subscribe %}">Inscreva-se já!</a>
-		</strong></p>
-		<p>Para dúvida e mais informações, entre em contato com <a href="mailto:eventex@eventex.com.br">eventex@eventex.com.br</a></p>
+	<p>O evento mais sensacional do ano depois do Dev in Rio!</p>
+	<p>Você não pode perder esta oportunidade!</p>
+	<p>
+		<a href="{% url subscriptions:subscribe %}" class="subscribe">Inscreva-se já!</a>
+	</p>
+	<p>Para dúvida e mais informações, entre em contato com <a href="mailto:eventex@eventex.com.br">eventex@eventex.com.br</a></p>
+	<section id="subscribers">
+		<h2>Participantes</h2>
+		<ul class="subscribers">
+			{% for user in subscribers %}
+			<li>
+				{% show_gravatar user.email 80 %}
+			</li>
+			{% endfor %}
+		</ul>
+	</section>
 {% endblock content %}
